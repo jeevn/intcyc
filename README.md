@@ -1,4 +1,4 @@
-INTERVAL CYCLER
+interval cycler
 ===============
 
 [Jeevan Rai, 2015](jeevn.github.io)
