@@ -1,7 +1,7 @@
 interval cycler
 ===============
 
-[Jeevan Rai, 2015](http://github.io/jeevn)
+[Jeevan Rai, 2015](http://github.com/jeevn)
 
 License: [CC BY-NC-SA](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
