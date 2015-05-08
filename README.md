@@ -9,4 +9,5 @@ chords using intervallic permutation on a given initial pitch
 ### for n00bs
 
 put **intcyc.py** in your home folder and run it from command line:
+
     $ python intcyc.py
