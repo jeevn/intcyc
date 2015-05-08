@@ -1,19 +1,18 @@
 # INTERVAL CYCLER # CC BY-NC-SA # http://jeevn.github.io
-
 scale = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B']
 note = lambda x: scale[(x%12)]
 def dir (y,x):
-    if (abs(y-x))//12>0: oct = str(abs(y-x)//12)+' '
-    else: oct = ' '
-    if (y>x): return '^'+oct
-    elif (y<x): return '_'+oct
+    if (abs(y-x))//12>0: o = str(abs(y-x)//12)+' '
+    else: o = ' '
+    if (y>x): return '^'+o
+    elif (y<x): return '_'+o
 print '\n*******************\n* INTERVAL CYCLER *\n*******************\n\nEnter pitches as space-separated integers.\nC=0(mod12); 8ves are relative; negatives are fine.\nMIDI note values are compatible.\n\nRead results across rows (not down columns).\nChord voicing: left--right = low--high.\n'
 while True:
     print 'INITIAL PITCH ROW:',
-    input = raw_input()
-    try: row = map(int, input.split())
+    userInput = raw_userInput()
+    try: row = map(int, userInput.split())
     except Exception:
-        if input in ('Q','q'): break
+        if userInput in ('Q','q'): break
         else:
             print '\nEnter pitches as numbers.\n'
             continue
