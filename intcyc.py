@@ -9,7 +9,7 @@ def dir (y,x):
 print '\n*******************\n* INTERVAL CYCLER *\n*******************\n\nEnter pitches as space-separated integers.\nC=0(mod12); 8ves are relative; negatives are fine.\nMIDI note values are compatible.\n\nRead results across rows (not down columns).\nChord voicing: left--right = low--high.\n'
 while True:
     print 'INITIAL PITCH ROW:',
-    userInput = raw_userInput()
+    userInput = raw_input()
     try: row = map(int, userInput.split())
     except Exception:
         if userInput in ('Q','q'): break
