@@ -21,13 +21,13 @@ while True:
     rows = [[row[0]] for i in range (n)]
     for i in range (n):
         for j in range (1,n): rows[i].append(rows[i][j-1] + intervals[(i+j)%n])
-    chords = [sorted(set(row))] + [sorted(set([s[i] for s in rows])) for i in range (1,n)]
-    trans = [[[note(p+i-row[0]) for p in x] for x in chords] for i in row]
-    notes = [[note(i[0])] + [dir(i[j],i[j-1])+note(i[j]) for j in range (1,n)] for i in rows]
+    chords = [ [sorted(set(rows[j]))] + [sorted(set([s[i]-row[j]+row[0] for s in rows])) for i in range (1,n)] for j in range (n)]
+    rnotes = [[note(i[0])] + [dir(i[j],i[j-1])+note(i[j]) for j in range (1,n)] for i in rows]
+    cnotes = [[[note(z) for z in y] for y in x]for x in chords]
     print '__________\nPITCH ROWS\n'
-    for m in notes: print ' '.join(m)
+    for m in rnotes: print ' '.join(m)
     print '\n______\nCHORDS\n'
-    for s in trans:
+    for s in cnotes:
         for t in s: print ' '.join(t)
         print
     print 'Go again, or type Q to quit.\n'
